@@ -4,7 +4,7 @@
 .AppleDouble
 .LSOverride
 .*nvim/
-.buildServer.json
+*buildServer.json
 
 # Icon must end with two
 Icon
