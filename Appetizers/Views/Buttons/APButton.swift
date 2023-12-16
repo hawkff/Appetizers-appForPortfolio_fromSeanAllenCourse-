@@ -1,9 +1,8 @@
 import SwiftUI
 
 struct APButton: View {
-    
     let title: LocalizedStringKey
-    
+
     var body: some View {
         Text(title)
             .font(.title3)
@@ -13,7 +12,7 @@ struct APButton: View {
             .background(Color.brandColor)
             .clipShape(.rect(cornerRadius: 10, style: .continuous))
     }
-};
+}
 
 #Preview {
     APButton(title: "Test Title")

@@ -6,8 +6,7 @@ import SwiftUI
     @Published var isLoading: Bool = false
     @Published var isShowingDetail = false
     @Published var selectedAppetizer: Appetizer?
-    
-    
+
 //    func getAppetizers() {
 //        isLoading = true
 //        let queue = DispatchQueue.main
@@ -19,7 +18,7 @@ import SwiftUI
 //                    self.appetizers = appetizers
 //                case .failure(let error):
 //                    switch error {
-//                        
+//
 //                    case .invalidURL:
 //                        alertItem = AlertContext.invalidURL
 //                    case .invalidResponse:
@@ -35,7 +34,7 @@ import SwiftUI
 //    }
     func getAppetizers() {
         isLoading = true
-        
+
         Task {
             do {
                 appetizers = try await NetworkManager.shared.getAppetizers()
@@ -46,5 +45,4 @@ import SwiftUI
             }
         }
     }
-};
-
+}

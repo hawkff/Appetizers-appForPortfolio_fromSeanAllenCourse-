@@ -5,21 +5,21 @@ struct AppetizerTabView: View {
     var body: some View {
         TabView {
             AppetizersListView()
-                .tabItem { Label("house", image: "Home")
+                .tabItem { Label("Home", systemImage: "house")
 //                    Image(systemName: "house")
 //                    Text("Home")
                 }
-            
+
             AccountView()
-                .tabItem { Label("person", image: "Account") }
-            
+                .tabItem { Label("Account", systemImage: "person.circle.fill") }
+
             OrderView()
-                .tabItem { Label("bag", image: "Order") }
+                .tabItem { Label("Order", systemImage: "basket.fill") }
                 .badge(order66.items.count)
         }
         .tint(.brandColor)
     }
-};
+}
 
 #Preview {
     AppetizerTabView()

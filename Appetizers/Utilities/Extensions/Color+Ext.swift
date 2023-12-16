@@ -7,4 +7,3 @@ extension Color {
 extension UIColor {
     static let brandColor = UIColor(named: "brandColor")
 }
-

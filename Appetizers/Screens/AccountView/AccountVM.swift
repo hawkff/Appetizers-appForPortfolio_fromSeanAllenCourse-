@@ -1,29 +1,26 @@
 import SwiftUI
 
-final class AccountVM : ObservableObject {
-    
-    
-    @AppStorage ("usser") private var userData: Data?
+final class AccountVM: ObservableObject {
+    @AppStorage("usser") private var userData: Data?
     @Published var usser = User()
     @Published var alertItem: AlertItem?
-    
-    
+
     var isValidForm: Bool {
         guard !usser.firstName.isEmpty && !usser.lastName.isEmpty && !usser.eMail.isEmpty else {
             alertItem = AlertContext.invalidForm
             return false
         }
-        
+
         guard usser.eMail.isValidEmail else {
             alertItem = AlertContext.invalidEmail
             return false
         }
         return true
     }
-    
-    func saveChanges(){
+
+    func saveChanges() {
         guard isValidForm else { return }
-        
+
         do {
             let data = try JSONEncoder().encode(usser)
             userData = data
@@ -32,7 +29,7 @@ final class AccountVM : ObservableObject {
             alertItem = AlertContext.invalidUserData
         }
     }
-    
+
     func retrieveUser() {
         guard let userData = userData else { return }
         do {
@@ -41,4 +38,4 @@ final class AccountVM : ObservableObject {
             alertItem = AlertContext.invalidUserData
         }
     }
-};
+}
